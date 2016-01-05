@@ -1,3 +1,5 @@
 'use strict';
 
-module.exports = 'hello there from module 1';
+var message = require('./script1');
+
+document.write(message);
