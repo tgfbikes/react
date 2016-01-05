@@ -3,8 +3,7 @@
 module.exports = {
   entry: {
     main: [
-      './script1.js',
-      './script2.js'
+      './src/main.js'
     ]
   },
   output: {
@@ -13,7 +12,7 @@ module.exports = {
   module: {
     loaders: [
       {
-      test: /\.js$/,
+      test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel'
       }
