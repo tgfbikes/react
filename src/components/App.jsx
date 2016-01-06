@@ -1,6 +1,8 @@
 'use strict';
 
 import React from 'react';
+import Firebase from 'firebase';
+import _ from 'lodash';
 import MessageList from './MessageList.jsx';
 import ChannelList from './ChannelList.jsx';
 import MessageBox from './MessageBox.jsx';
