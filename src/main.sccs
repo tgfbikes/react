@@ -15,3 +15,9 @@ body {
 .flex-grow-two {flex-grow: 2;}
 
 .left-margin {margin-left: 30px;}
+
+.message-box {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 30px;
+}
