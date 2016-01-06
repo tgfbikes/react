@@ -1,11 +1,15 @@
 'use strict';
 
 import React from 'react';
+import Message from './Message.jsx';
+import mui from 'material-ui';
+
+var {Card, List} = mui;
 
 
 class MessageList extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       messages: [
         'Captain Jean Luke Picard',
@@ -17,12 +21,14 @@ class MessageList extends React.Component {
   render() {
     var messageNodes = this.state.messages.map((message) => {
       return (
-        <div>{message}</div>
+        <Message message={message} />
       );
     });
     
     return (
-      <div>{messageNodes}</div>
+      <Card>
+        <List>{messageNodes}</List>
+      </Card>
     );
   }
 }
