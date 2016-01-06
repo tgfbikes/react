@@ -8,6 +8,7 @@ var {Card, List} = mui;
 
 
 class MessageList extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {

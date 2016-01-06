@@ -14,7 +14,7 @@ class Message extends React.Component {
   
   render() {
     return(
-    <ListItem leftAvatar={<Avatar src='https://identicons.github.com/tgfbikes.png' />}>
+      <ListItem leftAvatar={<Avatar src='https://identicons.github.com/tgfbikes.png' />}>
         {this.props.message}
       </ListItem>
     );

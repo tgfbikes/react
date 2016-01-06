@@ -2,6 +2,7 @@
 
 import React from 'react';
 import MessageList from './MessageList.jsx';
+import ChannelList from './ChannelList.jsx';
 import mui from 'material-ui';
 
 var ThemeManager = new mui.Styles.ThemeManager();
@@ -40,6 +41,7 @@ class App extends React.Component {
       <div>
         <AppBar title='Chatty Chatty Bang Bang' />
         <MessageList />
+        <ChannelList />
       </div>
     );
   }
