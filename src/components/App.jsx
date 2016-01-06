@@ -40,8 +40,10 @@ class App extends React.Component {
     return (
       <div>
         <AppBar title='Chatty Chatty Bang Bang' />
-        <MessageList />
-        <ChannelList />
+        <div className='flex-container'>
+          <ChannelList />
+          <MessageList />
+        </div>
       </div>
     );
   }

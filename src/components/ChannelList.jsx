@@ -27,8 +27,8 @@ class ChannelList extends React.Component {
     });
     
     return (
-      <Card>
-      <List>{channelNodes}</List>
+      <Card className='flex-grow-one'>
+        <List>{channelNodes}</List>
       </Card>
     );
   }
