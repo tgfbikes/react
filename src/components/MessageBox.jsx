@@ -5,7 +5,7 @@ import mui from 'material-ui';
 import trim from 'trim';
 import Firebase from 'firebase';
 
-var {Card} = mui;
+var {Card, CardTitle} = mui;
 
 
 class MessageBox extends React.Component {
@@ -42,6 +42,10 @@ class MessageBox extends React.Component {
   render() {
     return(
       <Card className='message-box'>
+        <CardTitle
+          title='Leave a comment'
+          subtitle='right now...'
+        />
         <textarea 
           value={this.state.message}
           onChange={this.onChange.bind(this)} // have to .bind(this) for ES6 class, sort of dumb, but whatever
