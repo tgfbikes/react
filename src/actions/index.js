@@ -6,7 +6,7 @@ import Firebase from 'firebase';
 
 class Actions {
 
-  login(args) => {
+  login(args) {
     return (dispatch) => {
       var firebaseRef = new Firebase('https://chatty-chatty.firebaseio.com/messages');
       

@@ -1,17 +1,23 @@
 'use strict';
 
-import React from 'react';
-import Firebase from 'firebase';
-import _ from 'lodash';
+import React           from 'react';
+import Firebase        from 'firebase';
+import _               from 'lodash';
+import mui             from 'material-ui';
+import connectToStores from 'alt/utils/connectToStores';
+
 import MessageList from './MessageList.jsx';
 import ChannelList from './ChannelList.jsx';
-import MessageBox from './MessageBox.jsx';
-import mui from 'material-ui';
+import MessageBox  from './MessageBox.jsx';
+import Login       from './Login.jsx';
+import ChatStore   from '../stores/ChatStore.jsx';
 
 var ThemeManager = new mui.Styles.ThemeManager();
 var Colors = mui.Styles.Colors;
 var AppBar = mui.AppBar;
 
+
+@connectToStores
 class App extends React.Component {
 
   constructor() {
@@ -23,6 +29,16 @@ class App extends React.Component {
       accent1Color:  Colors.greenA200
     });
   }
+  
+    // **ES7** Subscribes App to ChatStore
+    static getStores() {
+      return [ChatStore];
+    }
+    
+    // **ES7** Changes state based on stores update
+    static getPropsFromStores() {
+      return ChatStore.getState();
+    }
   
     // **ES7** Setting color theme for child component's context via muiTheme variable
     // This only declares we are placing this on the child's context
@@ -40,14 +56,24 @@ class App extends React.Component {
     
   
   render() {
+    var view = <Login />
+    
+    if (this.props.user) {
+      view = (
+        <div>
+          <div className='flex-container'>
+            <ChannelList />
+            <MessageList />
+          </div>
+          <MessageBox />
+        </div>
+      ); 
+    }
+    
     return (
       <div>
         <AppBar title='Chatty Chatty Bang Bang' />
-        <div className='flex-container'>
-          <ChannelList />
-          <MessageList />
-        </div>
-        <MessageBox />
+        {view}
       </div>
     );
   }
