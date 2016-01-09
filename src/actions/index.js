@@ -5,6 +5,15 @@ import Firebase from 'firebase';
 
 
 class Actions {
+  
+  constructor() {
+    this.generateActions(
+      'channelsReceived',
+      'channelsFailed',
+      'messagesReceived',
+      'messagesFailed'
+    );
+  }
 
   login(args) {
     return (dispatch) => {
